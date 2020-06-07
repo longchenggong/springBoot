@@ -1,0 +1,8 @@
+开发中会遇到需要所有子线程执行完毕通知主线程处理某些逻辑的场景。
+或者线程a在执行到某个条件通知线程b执行某个操作。
+可通过以下几种方式实现：
+    等待通知机制：两个线程通过对同一对象调用等待wait()和通知notify()方法进行通讯。
+    volatile共享内存：private static volatile boolean flag = true ;
+    countDownLatch：可以实现join()相同功能，更灵活。基于AQS
+    cyclicBarrier并发工具：叫屏障或栅栏，可以等待n个线程都达到某个状态后继续运行的效果
+    线程池awaitTermination（）：

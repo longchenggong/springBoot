@@ -1,0 +1,8 @@
+开源框架中的工厂模式：
+1。spring中通过getBean("XX")获取bean
+2。消息队列，如ActiveMQ为例子
+   // 1、创建一个连接工厂对象，需要指定服务的ip及端口。
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.155:61616");
+        // 2、使用工厂对象创建一个Connection对象。
+为什么要用？ 1。解耦：把创建对象的过程和使用分开
+           2。降低代码重复

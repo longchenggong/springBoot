@@ -1,0 +1,24 @@
+com
+  +- example
+    +- myproject
+      +- Application.java
+      |
+      +- domain
+      |  +- Customer.java
+      |  +- CustomerRepository.java
+      |
+      +- service
+      |  +- CustomerService.java
+      |
+      +- controller
+      |  +- CustomerController.java
+      |
+      | +- config
+      |  +- swagerConfig.java
+      |
+ Spring Boot 的启动类是需要最外层的,一般情况下 Spring Boot 项目结构类似下面这样
+ Application.java是项目的启动类
+ domain目录主要用于实体（Entity）与数据访问层（Repository）
+ service 层主要是业务类代码
+ controller 负责页面访问控制
+ config 目录主要放一些配置类
