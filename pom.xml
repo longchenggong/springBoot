@@ -15,11 +15,22 @@
     <url>http://www.ello.vip</url>
     <description>我的项目</description><!-- 项目的描述, Maven 产生的文档用 -->
 
+    <!--子模块-->
+    <modules>
+        <module>ch1</module>
+        <module>java</module>
+        <module>oa</module>
+    </modules>
+    <packaging>pom</packaging><!-- 打包方式 （pom,war,jar） -->
+
     <!-- 属性设置 -->
     <properties>
-        <ello.version>4.2.0</ello.version>
+        <!--maven项目使用编码，另一种匹配编码的方式-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+
+        <ello.version>4.2.0</ello.version>
         <java.version>1.8</java.version>
         <shiro.version>1.4.2</shiro.version>
         <thymeleaf.extras.shiro.version>2.0.0</thymeleaf.extras.shiro.version>
@@ -140,15 +151,6 @@
 
     </dependencyManagement>
 
-    <!--模块-->
-    <modules>
-        <module>ch1</module>
-        <module>java</module>
-        <module>oa</module>
-        <module>tetet</module>
-    </modules>
-    <packaging>pom</packaging><!-- 打包方式 （pom,war,jar） -->
-
 
     <dependencies>
 
@@ -156,14 +158,20 @@
 
 
     <!-- 将应用打包成一个可执行jar -->
+    <!--build：控制配置 maven构建项目到参数设置-->
     <build>
+        <!--配置插件-->
         <plugins>
+            <!--具体插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
+                <!--配置插件到信息-->
                 <configuration>
+                    <!--告诉maven 我们写到代码是在jdk1.8上编译到-->
                     <source>${java.version}</source>
+                    <!--我们到程序应该运行在 1.8的jdk上-->
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
