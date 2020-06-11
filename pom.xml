@@ -20,6 +20,7 @@
         <module>ch1</module>
         <module>java</module>
         <module>oa</module>
+        <module>db</module>
     </modules>
     <packaging>pom</packaging><!-- 打包方式 （pom,war,jar） -->
 
