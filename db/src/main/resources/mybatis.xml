@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--mybatis日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--环境配置：数据库连接信息
+        default:必须和某个environment一样。使用哪个数据库
+    -->
+    <environments default="mydev">
+
+
+        <!--environment:一个数据库的配置，环境。可配置多个数据库 -->
+        <environment id="mydev">
+            <!--transactionManager：mybatis的事务类型
+                    type：JDBC 使用jdbc中的Connection对象的commit，rollback做事务处理
+            -->
+            <transactionManager type="jdbc"/>
+            <!--dataSource:数据源
+                    type：数据源类型， POOLED-连接池
+            -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ello"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--slq映射的位置-->
+    <mappers>
+        <!--一个映射对应一个mapper
+            路径：target/classer/
+        -->
+        <mapper resource="com/ello/dao/StudentDao.xml"/>
+    </mappers>
+</configuration>
+<!--
+    1.约束文件 mybatis-3-config.dtd
+
+-->
