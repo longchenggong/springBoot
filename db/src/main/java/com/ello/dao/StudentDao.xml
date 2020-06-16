@@ -18,6 +18,6 @@
             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
             mybatis-3-mapper.dtd 约束文件，定义标签语法规则
-    2.mapper:  namespace明明空间，可自定义。使dao接口的全限定名称
+    2.mapper:  namespace命名空间，可自定义。使dao接口的全限定名称
     3.select：  id-方法名称   resultType-类型全限定名称
 -->

@@ -10,6 +10,16 @@ public class Student {
     private String email;
     private Integer age;
 
+    private int a;
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -17,6 +27,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
+                ", a=" + a +
                 '}';
     }
 
@@ -33,6 +44,7 @@ public class Student {
     }
 
     public void setName(String name) {
+        System.out.println("调用setName：" + name);
         this.name = name;
     }
 
